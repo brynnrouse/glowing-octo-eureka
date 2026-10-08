@@ -56,12 +56,12 @@ for y in range(logo.height):
 LOGO_RATIO = logo.width / logo.height
 logo_reader = ImageReader(logo)
 
-# ---- copy (from the original draft, unchanged) ----
+# ---- copy (from the original draft; the two approval lines were corrected against Claude's help page) ----
 INTRO = (
     "Claude now sits in a sidebar inside Google Docs, Sheets, and Slides. It can read the file "
-    "you have open and make edits right inside it. You approve each change one by one, so "
-    "nothing slips in without you. It is in public beta now for paid Claude plans. Here are 10 "
-    "prompts to copy, paste, and use in your real marketing work."
+    "you have open and make edits right inside it. Out of the box, it asks before every edit "
+    "and waits for your yes, so nothing slips in without you. It is in public beta now for paid "
+    "Claude plans. Here are 10 prompts to copy, paste, and use in your real marketing work."
 )
 DOCS = [
     ("Rewrite this like I talk.", "Rewrite this draft in my voice. Keep it friendly, short sentences, no fancy words."),
@@ -79,8 +79,8 @@ SHEETS = [
 ]
 RULE_LEAD = "Claude drafts, you approve."
 RULE_BODY = (
-    "Every edit lands one by one, and you say yes to each one. Never publish something you did "
-    "not read. Claude saves the typing time. You keep the final word."
+    "Keep the sidebar on “Ask before edits” and every change waits for your yes. Never "
+    "publish something you did not read. Claude saves the typing time. You keep the final word."
 )
 
 FOOTER_H = 104
@@ -140,7 +140,7 @@ def footer(c):
     c.drawImage(logo_reader, W / 2 - lh * LOGO_RATIO / 2, FOOTER_H - 28 - 14 - lh, width=lh * LOGO_RATIO, height=lh, mask="auto")
     c.setFillColor(GREY)
     c.setFont("LF-Semi", 9)
-    c.drawCentredString(W / 2, 14, "Bambu Marketing Co.  ·  @bambumarketingco  ·  day 10 of 90")
+    c.drawCentredString(W / 2, 14, "Bambu Marketing Co.  ·  @bambumarketingco")
 
 
 def card(c, y_top, num, title, body, w=W - 2 * MX, x=MX):
